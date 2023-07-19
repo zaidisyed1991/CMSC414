@@ -18,7 +18,7 @@ Overall Protocol:
 
 
 
-Vulnerabilities we attempted to cover:
+Vulnerabilities attempted to cover:
 1. Buffer overflow attacks
    - Usage of strncpy instead of strcpy
 2. Data breach/leak
@@ -34,27 +34,27 @@ Vulnerabilities we attempted to cover:
 
 
 
-Vulnerabilities that we think important to cover, but could not securely implement: 
+Vulnerabilities that was though important to cover, but could not securely implement: 
 1. The number of args, the document that the c language can hold maximum of 127 parameters 
    in one function definition, and 4095 characters in a logical source line. In our function, 
-   we only checked whethehr the characters is larger than 4095, but we didn't check the 
-   arguement number. But I think it should be fine, because in our functions we checked the 
-   vaild opinon for arguement and we check for repeated arguement. There will be max of 6 
+   but only checked whethehr the characters is larger than 4095, but I didn't check the 
+   arguement number. But I think it should be fine, because in our functions I checked the 
+   vaild opinon for arguement and I checked for repeated arguement. There will be max of 6 
    arguemment (exclude the file) input into the function --> in general it should not 
    exceed the limit of 127 arguements. 
-2. We didn't check whether the context has exact same format (or data type) with the file 
+2. I didn't check whether the context has exact same format (or data type) with the file 
    format. For example, if the file is txt file, the the context inside this file should 
-   also be txt. The reason we worry about this is we worry if we passing this file into 
+   also be txt. The reason I worry about this is that if I pass this file into 
    the bank from atm and execute it, this may destory our bank and not let this work. 
-   We didn't do this in our project because we actually don't know how to check it 
+   I didn't do this in our project because I actually don't know how to check it 
    (I searched online and there is not function I found can help with it). 
-3. Another think we didn't do is in our thought we want to check that only certainty of 
-   file extention can be passed in (like only txt, bin file can be passed in). we think 
+3. Another thing is I didn't do is in our thought I want to check that only certainty of 
+   file extention can be passed in (like only txt, bin file can be passed in). I think 
    this will lower the danger that if the attacker passing a executable attack file into 
    our function that can desory our machine or stole/modify information from it. 
 4. Check whether the user input more than 1 file in one opinion into the function --> this 
    may cause a segmentation fault. 
-5. We were not able to implement defenses against DOS attacks, but recognize that it is a
+5. I was not able to implement defenses against DOS attacks, but recognize that it is a
    major threat to the system.
 6. Storing account name inside cardfile (stored in Bank upon user creation) for heightened 
    security. Bank would check the provided account and cardfile and compare with its database
