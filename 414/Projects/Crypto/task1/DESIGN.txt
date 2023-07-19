@@ -1,0 +1,1 @@
+In the first 4 bytes we print the key length, in the next $keylength bytes we print the key and then we print the ciphertext.

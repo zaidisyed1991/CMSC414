@@ -1,0 +1,7 @@
+comment="doing great!", "bob":"you got this!", "charlie":"you rock!"}' -- '"
+
+SQL Query: UPDATE posts SET comments = '{"bob":"woah","kathy":"doing great!", "bob":"you got this!", "charlie":"you rock!"}' -- '"}' WHERE post_id = 4
+removing commented code: UPDATE posts SET comments = '{"bob":"woah","kathy":"doing great!", "bob":"you got this!", "charlie":"you rock!"}'
+
+Q: why does bob say "you got this!" instead of "woah"?
+A: Because when parsing the json string, we have two occurances of key "bob" and only the last occurance of "bob" is taken into account

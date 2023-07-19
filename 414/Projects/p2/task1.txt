@@ -1,0 +1,6 @@
+username="kathy"
+password="' or '1'='1"
+
+If we plug in the values above for $username and $password, the sql query will look like this when executed:
+"SELECT * FROM users WHERE username = 'kathy' and password = '' or '1'= '1';"
+And this would return the row where 'kathy' is the username and regardless of the password

